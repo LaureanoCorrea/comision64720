@@ -1,0 +1,189 @@
+$primary-color: #343a40;
+$secondary-color: #17a2b8;
+$hover-color: #138496;
+$background-color: #f8f9fa;
+$text-color: #6c757d;
+$footer-background: #343a40;
+$white: #ffffff;
+$light-background: #ffffff;
+$card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+$border-radius: 8px;
+
+// Fuentes
+$font-family: 'Arial', sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+  line-height: 1.6;
+  background-color: $background-color;
+  color: $text-color;
+}
+
+// Encabezado y Navbar
+header {
+  padding: 20px;
+  text-align: center;
+
+  .icon-head {
+    width: 30px;
+    height: auto;
+  }
+
+  span {
+    font-size: 23px;
+  }
+
+  .navbar-toggler {
+    border: none;
+    margin-left: 5px;
+
+    .navbar-toggler-icon {
+      width: 30px;
+    }
+  }
+
+
+}
+
+// Sección principal
+main {
+  margin: 3%;
+  padding: 20px;
+
+  .index-background {
+    background-image: url('../images/portada.jpg');
+    background-size: cover;
+    height: 400px;
+  }
+
+  .about-background {
+    background: url('../images/repair-shop.png');
+    background-size: cover;
+    height: 400px;
+  }
+
+  .main-index {
+    padding: 2rem;
+    background-color: $light-background;
+    margin-top: -50px;
+    border-radius: $border-radius;
+    box-shadow: $card-shadow;
+
+    h2 {
+      font-size: 2.5rem;
+      color: $primary-color;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: 2rem;
+      color: $primary-color;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      color: $text-color;
+      margin-bottom: 1rem;
+    }
+
+    .card-container {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+
+      .post {
+        width: 23%;
+        background-color: $light-background;
+        padding: 1rem;
+        border-radius: $border-radius;
+        box-shadow: $card-shadow;
+
+        .icon {
+          width: 100%;
+          height: auto;
+          border-radius: 5px;
+        }
+      }
+    }
+
+    .btn-info {
+      background-color: $secondary-color;
+      border-color: $secondary-color;
+      color: $white;
+
+      &:hover {
+        background-color: $hover-color;
+        border-color: $secondary-color, 10%;
+      }
+    }
+
+    .btn {
+      margin-top: 1rem;
+    }
+  }
+}
+
+// Footer
+footer {
+  background-color: $footer-background;
+  padding: 1rem;
+  text-align: center;
+  color: $white;
+
+  a {
+    color: $white;
+    margin: 0 1rem;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Estilos para el menú desplegable (offcanvas)
+.offcanvas {
+  background-color: $background-color;
+
+  .offcanvas-header {
+    background-color: $primary-color;
+    color: $white;
+  }
+
+  .offcanvas-body {
+    .navbar-nav {
+      .nav-link {
+        color: $primary-color;
+
+        &:hover {
+          background-color: $light-background;
+        }
+      }
+    }
+  }
+}
+
+// Responsividad para dispositivos pequeños
+@media (max-width: 768px) {
+  .main-index .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-index .card-container .post {
+    width: 80%;
+    margin-bottom: 1rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+}
