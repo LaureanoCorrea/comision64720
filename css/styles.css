@@ -5,6 +5,7 @@
 }
 
 body {
+  width: 100%;
   font-family: "Arial", sans-serif;
   line-height: 1.6;
   background-color: #f8f9fa;
@@ -35,65 +36,177 @@ main {
   padding: 20px;
 }
 main .index-background {
-  background-image: url("../images/portada.jpg");
+  position: relative;
   background-size: cover;
   height: 400px;
+  background-position: center 58%;
+  mask-repeat: no-repeat;
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+  background-image: url("../images/portada.jpg");
+}
+main .index-background .text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+main .index-background .text-overlay:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.404);
+  margin-bottom: 20px;
+  z-index: 1;
+  z-index: 1;
+}
+main .index-background .text-overlay h1,
+main .index-background .text-overlay h2,
+main .index-background .text-overlay h3 {
+  position: absolute;
+  color: white;
+  text-shadow: 2px 5px 4px rgba(0, 0, 0, 0.568);
+  left: 5%;
+  right: 5%;
+  z-index: 2;
+  width: 90%;
+  z-index: 2;
+}
+main .index-background .text-overlay h1 {
+  top: 18%;
+  font-size: 8vw;
+  text-align: center;
+}
+main .index-background .text-overlay h2 {
+  top: 45%;
+  font-size: 5vw;
+  text-align: center;
+}
+main .index-background .text-overlay h3 {
+  top: 55%;
+  font-size: 4vw;
+  text-align: center;
 }
 main .about-background {
-  background: url("../images/repair-shop.png");
+  position: relative;
   background-size: cover;
   height: 400px;
+  background-position: center 58%;
+  mask-repeat: no-repeat;
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+  background: url("../images/tow.jpg") no-repeat center center/cover;
 }
-main .main-index {
-  padding: 2rem;
-  background-color: #ffffff;
-  margin-top: -50px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+main .services-background {
+  position: relative;
+  background-size: cover;
+  height: 400px;
+  background-position: center 58%;
+  mask-repeat: no-repeat;
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+  background: url("../images/repair-shop.png") no-repeat center center/cover;
 }
-main .main-index h2 {
+main .reservations-background {
+  position: relative;
+  background-size: cover;
+  height: 400px;
+  background-position: center 58%;
+  mask-repeat: no-repeat;
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+  background: url("../images/reservations.png") no-repeat center center/cover;
+}
+main .contact-background {
+  background-size: cover;
+  height: 400px;
+  background-position: center 58%;
+  mask-repeat: no-repeat;
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+  position: relative;
+  background: url("../images/contact.webp") no-repeat center center/cover;
+}
+main h2 {
   font-size: 2.5rem;
   color: #343a40;
   margin-bottom: 1rem;
 }
-main .main-index h3 {
+main h3 {
   font-size: 2rem;
   color: #343a40;
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
-main .main-index p {
+main p {
   font-size: 1rem;
   color: #6c757d;
   margin-bottom: 1rem;
 }
-main .main-index .card-container {
+main .card-container {
   display: flex;
-  gap: 1rem;
+  margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+  gap: 20px;
+  justify-content: space-evenly;
 }
-main .main-index .card-container .post {
-  width: 23%;
+main .card-container .post {
   background-color: #ffffff;
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-main .main-index .card-container .post .icon {
-  width: 100%;
-  height: auto;
+main .card-container .post span {
+  font-size: 1.5rem;
+  text-align: center;
+}
+main .card-container .post .icon {
+  width: 80%;
+  height: 200px;
   border-radius: 5px;
 }
-main .main-index .btn-info {
+main .card-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .ubication {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .btn-info {
   background-color: #17a2b8;
   border-color: #17a2b8;
   color: #ffffff;
 }
-main .main-index .btn-info:hover {
+main .btn-info:hover {
   background-color: #138496;
   border-color: #17a2b8, 10%;
 }
-main .main-index .btn {
+main .form-style {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: auto;
+}
+main .form-style p {
+  text-align: center;
+  font-size: 1.5rem;
+}
+main .form-style .form-group {
+  margin-bottom: 1rem;
+}
+main .form-style .row {
+  margin-bottom: 1rem;
+}
+main .form-style .prefers {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+main .btn {
   margin-top: 1rem;
 }
 
@@ -111,6 +224,9 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+footer .Smedia {
+  background-color: transparent;
+}
 
 .offcanvas {
   background-color: #f8f9fa;
@@ -126,17 +242,177 @@ footer a:hover {
   background-color: #ffffff;
 }
 
-@media (max-width: 768px) {
-  .main-index .card-container {
+@media (max-width: 480px) {
+  body {
+    height: 100vh;
+    font-size: 14px;
+  }
+  header {
+    padding: 10px;
+    text-align: center;
+  }
+  header span {
+    font-size: 18px;
+  }
+  header .navbar-toggler .navbar-toggler-icon {
+    width: 25px;
+  }
+  main {
+    margin: 5px;
+    padding: 10px;
+  }
+  main .index-background {
+    height: 40vh;
+    min-height: 440px;
+    max-height: 516px;
+    background-size: cover;
+    background-position: center;
+  }
+  main h1 {
+    font-size: 6vw;
+  }
+  main h2,
+  main h3 {
+    font-size: 4vw;
+  }
+  main .card-container {
+    width: 100%;
     flex-direction: column;
     align-items: center;
   }
-  .main-index .card-container .post {
-    width: 80%;
-    margin-bottom: 1rem;
+  main .post {
+    width: 86%;
+    padding: 0.8rem;
+  }
+  main .post .icon {
+    width: 60%;
+  }
+  main .mapa {
+    width: 100%;
+  }
+  footer {
+    font-size: 0.7rem;
+    padding: 10px;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  body {
+    height: 100vh;
+    font-size: 15px;
+  }
+  header {
+    padding: 15px;
+    text-align: center;
+  }
+  header span {
+    font-size: 20px;
+  }
+  main {
+    margin: 10px;
+    padding: 15px;
+  }
+  main .index-background {
+    height: 300px;
+  }
+  main h1 {
+    font-size: 7vw;
+  }
+  main h2,
+  main h3 {
+    font-size: 5vw;
+  }
+  main .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  main .post {
+    width: 90%;
+    padding: 1rem;
+  }
+  main .mapa {
+    width: 100%;
   }
   footer {
     font-size: 0.8rem;
+    padding: 15px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+  header {
+    padding: 20px;
+    text-align: center;
+  }
+  header span {
+    font-size: 22px;
+  }
+  main {
+    margin: 15px;
+    padding: 20px;
+  }
+  main .index-background {
+    height: 350px;
+  }
+  main h1 {
+    font-size: 8vw;
+  }
+  main h2,
+  main h3 {
+    font-size: 5vw;
+  }
+  main .card-container {
+    flex-direction: row;
+    gap: 15px;
+    justify-content: space-between;
+  }
+  main .post {
+    width: 48%;
+    padding: 1rem;
+  }
+  footer {
+    font-size: 0.9rem;
+    padding: 20px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1200px) {
+  body {
+    font-size: 17px;
+  }
+  header {
+    padding: 25px;
+    text-align: center;
+  }
+  header span {
+    font-size: 24px;
+  }
+  main {
+    margin: 20px;
+    padding: 25px;
+  }
+  main .index-background {
+    height: 400px;
+  }
+  main h1 {
+    font-size: 6vw;
+  }
+  main h2,
+  main h3 {
+    font-size: 4vw;
+  }
+  main .card-container {
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-evenly;
+  }
+  main .post {
+    width: 30%;
+    padding: 1.5rem;
+  }
+  footer {
+    font-size: 1rem;
+    padding: 25px;
   }
 }
 
