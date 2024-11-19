@@ -50,6 +50,7 @@
             </div>
         </nav>
     </header>
+
     <main>
         <div class="reservations-background">
             <!-- div para la imagen -->
@@ -111,7 +112,7 @@
                             <option value="D5">Viernes</option>
                         </select>
                     </div>
-                    <div class="col-auto my-1">
+                    <div class="col-auto my-1" prefers>
                         <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Elija un horario</label>
                         <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
                             <option selected>Horario Preferido...</option>
@@ -132,7 +133,7 @@
             </fieldset>
         </form>
 
-        <!-- modal -->
+        <!-- modal de simulacion de reserva -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -150,29 +151,25 @@
             </div>
         </div>
 
-
-
         <div class="card-container">
             <div class="post">
-                <img class="icon" src="../icons/tow.png" alt="remolque">
+                <div class="icon tow"></div>
                 <span>Remolque</span>
             </div>
             <div class="post">
-                <img class="icon" src="../icons/tire.png" alt="cambio de rueda"> <span>
-                    Cambio de Rueda
-                </span>
+                <div class="icon tire"></div>
+                <span>Cambio de Rueda</span>
             </div>
             <div class="post">
-                <img class="icon" src="../icons/baterie.png" alt="arranque"> <span>
-                    Arranque
-                </span>
+                <div class="icon bat"></div>
+                <span>Arranque</span>
             </div>
             <div class="post">
-                <img class="icon" src="../icons/gas.png" alt="repostaje"> <span>
-                    Repostaje
-                </span>
+                <div class="icon gas"></div>
+                <span>Repostaje</span>
             </div>
         </div>
+
         <section>
             <h3>Lista de precios</h3>
             <ul class="list-group ">
@@ -206,8 +203,8 @@
                 </li>
             </ul>
         </section>
-    </main>
 
+    </main>
 
     <footer>
         <p>&copy; 2024 Transportes Correa. Todos los derechos reservados.</p>
@@ -232,10 +229,10 @@
 
             </a>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-
 </body>
 
 </html>
