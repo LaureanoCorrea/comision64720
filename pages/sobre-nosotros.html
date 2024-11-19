@@ -5,38 +5,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Sitio Web</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="../index.html">
-                <img src="../logo/logo.svg" width="30" height="30" class="d-inline-block align-top icon" alt="">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="./servicios.html">Servicios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./reservas.html">Reservas</a> </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./contacto.html">Contacto</a>
-                    </li>
-                </ul>
+        <nav class="navbar bg-body-tertiary fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html">
+                    <div class="container-fluid">
+                        <img src="../logo/logo.svg" width="30" height="30" class="d-inline-block align-top icon-head"
+                            alt="">
+                </a>
+                <span>Transportes Correa</span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./servicios.html">Servicios</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./reservas.html"> Reservas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./contacto.html">Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
 
     <main>
+        <div class="about-background">
+            <!-- div para la imagen -->
+        </div>
         <h2>Confianza en carretera
             con nuestro servicio experto</h2>
 
@@ -49,24 +67,56 @@
             ayudarle a llegar a su destino sin contratiempos. Confíe en nosotros para un servicio
             confiable en carretera.
         </p>
+        <div class="main-index">
+            <h3>Nuestros Clientes</h3>
+            <div class="card-container">
+                <div class="post">
+                    <img class="icon" src="../images/6602449.jpg" alt="cliente1">
+                </div>
+                <div class="post">
+                    <img class="icon" src="../images/7459344.jpg" alt="cliente2">
+                </div>
+                <div class="post">
+                    <img class="icon" src="../images/8_1sasa11.jpg" alt="cliente3">
+                </div>
+                <div class="post">
+                    <img class="icon" src="../images/9391714.png" alt="cliente4">
+                </div>
+            </div>
 
-        <h3>Nuestros Clientes</h3>
-        <img class="icon" src="../images/6602449.jpg" alt="cliente1">
-        <img class="icon" src="../images/7459344.jpg" alt="cliente2">
-        <img class="icon" src="../images/8_1sasa11.jpg" alt="cliente3">
-        <img class="icon" src="../images/9391714.png" alt="cliente4">
-
-        <div>
-            <button type="button">Reserva</button>
-            <p>Reserva ahora tu proximo traslado</p>
+            <div>
+                <a class="btn btn-info" href="./reservas.html" role="button">Reservar</a>
+                <p>Reserva ahora tu proximo traslado</p>
+            </div>
         </div>
     </main>
 
-
     <footer>
         <p>&copy; 2024 Transportes Correa. Todos los derechos reservados.</p>
-        <a href="#">Facebook</a>
-        <a href="#">Instagram</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">WhatsApp</a>
+        <a class="footer-icon" href="#">
+            <img src="../icons/facebook.svg" width="30" height="30" class="Smedia d-inline-block align-top"
+                alt="face Logo">
+
+        </a>
+        <a class="footer-icon" href="#">
+            <img src="../icons/instagram.svg" width="30" height="30" class="Smedia d-inline-block align-top"
+                alt="face Logo">
+
+        </a>
+
+        <a class="footer-icon" href="#">
+            <img src="../icons/linkedin.svg" width="30" height="30" class="Smedia d-inline-block align-top"
+                alt="face Logo">
+
+            <a class="footer-icon" href="https://wa.link/ty4kwx">
+                <img src="../icons/whatsapp.svg" width="30" height="30" class="Smedia d-inline-block align-top"
+                    alt="face Logo">
+
+            </a>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

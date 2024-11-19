@@ -1,0 +1,601 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$primary-color: #343a40;
+$secondary-color: #17a2b8;
+$hover-color: #138496;
+$background-color: #f8f9fa;
+$text-color: #6c757d;
+$footer-background: #343a40;
+$white: #ffffff;
+$light-background: #ffffff;
+$card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+$border-radius: 8px;
+
+
+@mixin background-images {
+  background-size: cover;
+  height: 400px;
+  background-position: center 58%;
+  mask-repeat: no-repeat;
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+}
+
+@mixin overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.404);
+  margin-bottom: 20px;
+  z-index: 1;
+}
+
+@mixin text-image {
+  position: absolute;
+  color: white;
+  text-shadow: 2px 5px 4px rgba(0, 0, 0, 0.568);
+  left: 5%;
+  right: 5%;
+  z-index: 2;
+  width: 90%;
+}
+
+// Fuentes
+$font-family: 'Arial', sans-serif;
+
+
+body {
+  width: 100%;
+  font-family: $font-family;
+  line-height: 1.6;
+  background-color: $background-color;
+  color: $text-color;
+}
+
+// Encabezado y Navbar
+header {
+  padding: 20px;
+  text-align: center;
+
+  .icon-head {
+    width: 30px;
+    height: auto;
+    transition: transform 0.3s ease;
+
+
+    &:hover {
+      scale: 2.2;
+      transform: rotate(360deg);
+    }
+  }
+
+  span {
+    font-size: 23px;
+  }
+
+
+  .navbar-toggler {
+    border: none;
+    margin-left: 5px;
+
+    .navbar-toggler-icon {
+      width: 30px;
+    }
+  }
+
+
+}
+
+// Sección principal
+main {
+  margin: 3%;
+  padding: 20px;
+
+  .index-background {
+    position: relative;
+    @include background-images;
+    background-image: url('../images/portada.jpg');
+
+    .text-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+
+      &:before {
+        content: '';
+        @include overlay;
+        z-index: 1;
+      }
+
+      h1,
+      h2,
+      h3 {
+        @include text-image;
+        z-index: 2;
+      }
+
+      h1 {
+        top: 18%;
+        font-size: 8vw;
+        text-align: center;
+      }
+
+      h2 {
+        top: 45%;
+        font-size: 5vw;
+        text-align: center;
+      }
+
+      h3 {
+        top: 55%;
+        font-size: 4vw;
+        text-align: center;
+      }
+    }
+  }
+
+  .about-background {
+    position: relative;
+    @include background-images;
+    background: url('../images/tow.jpg') no-repeat center center/cover;
+  }
+
+  .services-background {
+    position: relative;
+    @include background-images;
+    background: url('../images/repair-shop.png') no-repeat center center/cover;
+  }
+
+  .reservations-background {
+    position: relative;
+    @include background-images;
+    background: url('../images/reservations.png') no-repeat center center/cover;
+  }
+
+  .contact-background {
+    @include background-images;
+    position: relative;
+    background: url('../images/contact.webp') no-repeat center center/cover;
+  }
+
+
+  h2 {
+    font-size: 2.5rem;
+    color: $primary-color;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+    color: $primary-color;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: $text-color;
+    margin-bottom: 1rem;
+  }
+
+  .card-container {
+    display: flex;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    gap: 20px;
+    justify-content: space-evenly;
+
+    .post {
+      background-color: $light-background;
+      padding: 1rem;
+      border-radius: $border-radius;
+      box-shadow: $card-shadow;
+      text-align: center;
+
+      span {
+        font-size: 1.5rem;
+        display: block;
+      }
+
+      .icon {
+        width: 100%;
+        height: 150px;
+        border-radius: 5px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: background-image 0.3s;
+      }
+
+      .bat {
+        background-image: url('../icons/baterie.png');
+
+        &:hover {
+          transform: scale(1.1);
+          background-image: url('../icons/energy_battery.png');
+        }
+      }
+
+      .gas {
+        background-image: url('../icons/gas.png');
+
+        &:hover {
+          transform: scale(1.1);
+          background-image: url('../icons/gasoline.png');
+        }
+      }
+
+      .tow {
+        background-image: url('../icons/tow.png');
+
+        &:hover {
+          transform: scale(1.1);
+          background-image: url('../icons/TowTruck.png');
+        }
+      }
+
+      .tire {
+        background-image: url('../icons/tire.png');
+
+        &:hover {
+          transform: scale(1.1);
+          background-image: url('../icons/Wheel.png');
+        }
+      }
+    }
+  }
+
+  .card-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ubication {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-info {
+    background-color: $secondary-color;
+    border-color: $secondary-color;
+    color: $white;
+
+    &:hover {
+      background-color: $hover-color;
+      border-color: $secondary-color, 10%;
+    }
+  }
+
+  .form-style {
+    background-color: $light-background;
+    padding: 2rem;
+    border-radius: $border-radius;
+    box-shadow: $card-shadow;
+    margin: 10%;
+
+    p {
+      text-align: center;
+      font-size: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .row {
+      margin-bottom: 1rem;
+    }
+
+    .prefers {
+      display: flex;
+      align-items: center;
+      margin: 5rem;
+      gap: 10px;
+    }
+  }
+
+  .btn {
+    margin-top: 1rem;
+  }
+}
+
+
+
+// Footer
+footer {
+  background-image: radial-gradient($primary-color, $secondary-color);
+  text-align: center;
+  color: $white;
+
+  .footer-icon {
+    img {
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  .Smedia {
+    margin: 5px;
+    background-color: transparent;
+  }
+}
+
+// Estilos para el menú desplegable (offcanvas)
+.offcanvas {
+  background-color: $background-color;
+
+  .offcanvas-header {
+    background-color: $primary-color;
+    color: $white;
+  }
+
+  .offcanvas-body {
+    .navbar-nav {
+      .nav-link {
+        color: $primary-color;
+
+        &:hover {
+          background-color: $light-background;
+        }
+      }
+    }
+  }
+}
+
+// Media Queries
+
+@media (max-width: 480px) {
+  body {
+    height: 100vh;
+    font-size: 14px;
+  }
+
+  header {
+    padding: 10px;
+    text-align: center;
+
+    span {
+      font-size: 18px;
+    }
+
+    .navbar-toggler {
+      .navbar-toggler-icon {
+        width: 25px;
+      }
+    }
+  }
+
+  main {
+    margin: 5px;
+    padding: 10px;
+
+    .index-background {
+      height: 40vh;
+      min-height: 440px;
+      max-height: 516px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    h1 {
+      font-size: 6vw;
+    }
+
+    h2,
+    h3 {
+      font-size: 4vw;
+    }
+
+    .card-container {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .post {
+      width: 86%;
+      padding: 0.8rem;
+
+      .icon {
+        width: 60%;
+      }
+    }
+
+    .form-style {
+
+      .prefers {
+        margin: 0;
+        gap: 10px;
+      }
+    }
+
+    .mapa {
+      width: 100%;
+    }
+  }
+
+  footer {
+    font-size: 0.7rem;
+    padding: 10px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  body {
+    height: 100vh;
+    font-size: 15px;
+  }
+
+  header {
+    padding: 15px;
+    text-align: center;
+
+    span {
+      font-size: 20px;
+    }
+  }
+
+  main {
+    margin: 10px;
+    padding: 15px;
+
+    .index-background {
+      height: 300px;
+    }
+
+    h1 {
+      font-size: 7vw;
+    }
+
+    h2,
+    h3 {
+      font-size: 5vw;
+    }
+
+    .card-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .post {
+      width: 90%;
+      padding: 1rem;
+    }
+
+    .mapa {
+      width: 100%;
+    }
+
+    .form-style {
+
+      .prefers {
+        margin: 0;
+        gap: 10px;
+      }
+    }
+  }
+
+  footer {
+    font-size: 0.8rem;
+    padding: 15px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+
+  header {
+    padding: 20px;
+    text-align: center;
+
+    span {
+      font-size: 22px;
+    }
+  }
+
+  main {
+    margin: 15px;
+    padding: 20px;
+
+    .index-background {
+      height: 350px;
+    }
+
+    h1 {
+      font-size: 8vw;
+    }
+
+    h2,
+    h3 {
+      font-size: 5vw;
+    }
+
+    .card-container {
+      flex-direction: row;
+      gap: 15px;
+      justify-content: space-between;
+    }
+
+    .form-style {
+
+      .prefers {
+        margin: 0;
+        gap: 10px;
+      }
+    }
+
+    .post {
+      width: 48%;
+      padding: 1rem;
+    }
+  }
+
+  footer {
+    font-size: 0.9rem;
+    padding: 20px;
+  }
+}
+
+@media (min-width: 1025px) {
+  body {
+    font-size: 17px;
+  }
+
+  header {
+    padding: 25px;
+    text-align: center;
+
+    span {
+      font-size: 24px;
+    }
+  }
+
+  main {
+    margin: 20px;
+    padding: 25px;
+
+    .index-background {
+      height: 400px;
+    }
+
+    h1 {
+      font-size: 6vw;
+    }
+
+    h2,
+    h3 {
+      font-size: 4vw;
+    }
+
+    .card-container {
+      flex-direction: row;
+      gap: 20px;
+      justify-content: space-evenly;
+    }
+
+    .post {
+      width: 30%;
+      padding: 1.5rem;
+    }
+  }
+
+  footer {
+    font-size: 1rem;
+    padding: 25px;
+  }
+}
