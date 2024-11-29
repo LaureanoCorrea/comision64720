@@ -11,6 +11,28 @@ body {
   background-color: #f8f9fa;
   color: #6c757d;
 }
+@media (max-width: 480px) {
+  body {
+    height: 100vh;
+    font-size: 14px;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  body {
+    height: 100vh;
+    font-size: 15px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1025px) {
+  body {
+    font-size: 17px;
+  }
+}
 
 header {
   padding: 20px;
@@ -30,141 +52,182 @@ header span {
 }
 header .navbar-toggler {
   border: none;
-  margin-left: 5px;
 }
 header .navbar-toggler .navbar-toggler-icon {
   width: 30px;
+}
+@media (max-width: 480px) {
+  header {
+    padding: 10px;
+  }
+  header span {
+    font-size: 18px;
+  }
+  header .navbar-toggler-icon {
+    width: 25px;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  header {
+    padding: 15px;
+  }
+  header span {
+    font-size: 20px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  header {
+    padding: 20px;
+  }
+  header span {
+    font-size: 22px;
+  }
+}
+@media (min-width: 1025px) {
+  header {
+    padding: 25px;
+  }
+  header span {
+    font-size: 24px;
+  }
 }
 
 main {
   margin: 3%;
   padding: 20px;
 }
-main .index-background {
+main .index-background,
+main .services-background,
+main .about-background,
+main .reservations-background,
+main .contact-background {
   position: relative;
   background-size: cover;
-  height: 400px;
-  background-position: center 58%;
-  mask-repeat: no-repeat;
   clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
-  background-image: url("../images/portada.jpg");
+  height: 400px;
 }
-main .index-background .text-overlay {
+main .index-background .background-img,
+main .services-background .background-img,
+main .about-background .background-img,
+main .reservations-background .background-img,
+main .contact-background .background-img {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  object-fit: cover;
+  z-index: -1;
 }
-main .index-background .text-overlay:before {
+main .index-background .text-overlay,
+main .services-background .text-overlay,
+main .about-background .text-overlay,
+main .reservations-background .text-overlay,
+main .contact-background .text-overlay {
+  position: absolute;
+  color: white;
+  text-shadow: 2px 5px 4px rgba(0, 0, 0, 0.692);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+main .index-background .text-overlay h1,
+main .services-background .text-overlay h1,
+main .about-background .text-overlay h1,
+main .reservations-background .text-overlay h1,
+main .contact-background .text-overlay h1 {
+  font-size: 7vw;
+}
+main .index-background .text-overlay h2,
+main .services-background .text-overlay h2,
+main .about-background .text-overlay h2,
+main .reservations-background .text-overlay h2,
+main .contact-background .text-overlay h2 {
+  font-size: 4.3vw;
+}
+main .index-background .text-overlay h3,
+main .services-background .text-overlay h3,
+main .about-background .text-overlay h3,
+main .reservations-background .text-overlay h3,
+main .contact-background .text-overlay h3 {
+  font-size: 3vw;
+}
+main .index-background .text-overlay:before,
+main .services-background .text-overlay:before,
+main .about-background .text-overlay:before,
+main .reservations-background .text-overlay:before,
+main .contact-background .text-overlay:before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.404);
-  margin-bottom: 20px;
-  z-index: 1;
   z-index: 1;
 }
-main .index-background .text-overlay h1,
-main .index-background .text-overlay h2,
-main .index-background .text-overlay h3 {
-  position: absolute;
-  color: white;
-  text-shadow: 2px 5px 4px rgba(0, 0, 0, 0.568);
-  left: 5%;
-  right: 5%;
-  z-index: 2;
-  width: 90%;
-  z-index: 2;
+@media (max-width: 480px) {
+  main .index-background,
+  main .services-background,
+  main .about-background,
+  main .reservations-background,
+  main .contact-background {
+    height: 40vh;
+  }
 }
-main .index-background .text-overlay h1 {
-  top: 18%;
-  font-size: 8vw;
-  text-align: center;
+@media (min-width: 481px) and (max-width: 768px) {
+  main .index-background,
+  main .services-background,
+  main .about-background,
+  main .reservations-background,
+  main .contact-background {
+    height: 300px;
+  }
 }
-main .index-background .text-overlay h2 {
-  top: 45%;
-  font-size: 5vw;
-  text-align: center;
-}
-main .index-background .text-overlay h3 {
-  top: 55%;
-  font-size: 4vw;
-  text-align: center;
-}
-main .about-background {
-  position: relative;
-  background-size: cover;
-  height: 400px;
-  background-position: center 58%;
-  mask-repeat: no-repeat;
-  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
-  background: url("../images/tow.jpg") no-repeat center center/cover;
-}
-main .services-background {
-  position: relative;
-  background-size: cover;
-  height: 400px;
-  background-position: center 58%;
-  mask-repeat: no-repeat;
-  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
-  background: url("../images/repair-shop.png") no-repeat center center/cover;
-}
-main .reservations-background {
-  position: relative;
-  background-size: cover;
-  height: 400px;
-  background-position: center 58%;
-  mask-repeat: no-repeat;
-  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
-  background: url("../images/reservations.png") no-repeat center center/cover;
-}
-main .contact-background {
-  background-size: cover;
-  height: 400px;
-  background-position: center 58%;
-  mask-repeat: no-repeat;
-  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
-  position: relative;
-  background: url("../images/contact.webp") no-repeat center center/cover;
-}
-main h2 {
-  font-size: 2.5rem;
-  color: #343a40;
-  margin-bottom: 1rem;
-}
-main h3 {
-  font-size: 2rem;
-  color: #343a40;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-main p {
-  font-size: 1rem;
-  color: #6c757d;
-  margin-bottom: 1rem;
+@media (min-width: 769px) and (max-width: 1024px) {
+  main .index-background,
+  main .services-background,
+  main .about-background,
+  main .reservations-background,
+  main .contact-background {
+    height: 350px;
+  }
 }
 main .card-container {
   display: flex;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
   gap: 20px;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 main .card-container .post {
+  width: calc(100% - 20px);
   background-color: #ffffff;
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
-main .card-container .post span {
-  font-size: 1.5rem;
-  display: block;
+@media (min-width: 481px) and (max-width: 768px) {
+  main .card-container .post {
+    width: 90%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  main .card-container .post {
+    width: 48%;
+  }
+}
+@media (min-width: 1025px) {
+  main .card-container .post {
+    width: 30%;
+  }
 }
 main .card-container .post .icon {
   width: 100%;
@@ -175,293 +238,49 @@ main .card-container .post .icon {
   background-position: center;
   transition: background-image 0.3s;
 }
-main .card-container .post .bat {
-  background-image: url("../icons/baterie.png");
-}
-main .card-container .post .bat:hover {
-  transform: scale(1.1);
-  background-image: url("../icons/energy_battery.png");
-}
-main .card-container .post .gas {
-  background-image: url("../icons/gas.png");
-}
-main .card-container .post .gas:hover {
-  transform: scale(1.1);
-  background-image: url("../icons/gasoline.png");
-}
-main .card-container .post .tow {
-  background-image: url("../icons/tow.png");
-}
-main .card-container .post .tow:hover {
-  transform: scale(1.1);
-  background-image: url("../icons/TowTruck.png");
-}
-main .card-container .post .tire {
-  background-image: url("../icons/tire.png");
-}
-main .card-container .post .tire:hover {
-  transform: scale(1.1);
-  background-image: url("../icons/Wheel.png");
-}
 main .card-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-around;
 }
-main .ubication {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-main .btn-info {
-  background-color: #17a2b8;
-  border-color: #17a2b8;
-  color: #ffffff;
-}
-main .btn-info:hover {
-  background-color: #138496;
-  border-color: #17a2b8, 10%;
-}
-main .form-style {
-  background-color: #ffffff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 10%;
-}
-main .form-style p {
+main .card-group h3 {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 4rem;
+  margin-top: 5%;
 }
-main .form-style .form-group {
-  margin-bottom: 1rem;
+main .ubication h3 {
+  text-align: center;
+  font-size: 3rem;
 }
-main .form-style .row {
-  margin-bottom: 1rem;
+main .ubication p {
+  text-align: center;
+  color: #17a2b8;
 }
-main .form-style .prefers {
-  display: flex;
-  align-items: center;
-  margin: 5rem;
-  gap: 10px;
-}
-main .btn {
-  margin-top: 1rem;
+main .ubication .mapa {
+  width: 98%;
 }
 
 footer {
   background-image: radial-gradient(#343a40, #17a2b8);
   text-align: center;
   color: #ffffff;
+  font-size: 1rem;
+  padding: 25px;
 }
-footer .footer-icon img {
-  transition: transform 0.3s ease;
-}
-footer .footer-icon img:hover {
-  transform: rotate(360deg);
-}
-footer .Smedia {
-  margin: 5px;
-  background-color: transparent;
-}
-
-.offcanvas {
-  background-color: #f8f9fa;
-}
-.offcanvas .offcanvas-header {
-  background-color: #343a40;
-  color: #ffffff;
-}
-.offcanvas .offcanvas-body .navbar-nav .nav-link {
-  color: #343a40;
-}
-.offcanvas .offcanvas-body .navbar-nav .nav-link:hover {
-  background-color: #ffffff;
-}
-
 @media (max-width: 480px) {
-  body {
-    height: 100vh;
-    font-size: 14px;
-  }
-  header {
-    padding: 10px;
-    text-align: center;
-  }
-  header span {
-    font-size: 18px;
-  }
-  header .navbar-toggler .navbar-toggler-icon {
-    width: 25px;
-  }
-  main {
-    margin: 5px;
-    padding: 10px;
-  }
-  main .index-background {
-    height: 40vh;
-    min-height: 440px;
-    max-height: 516px;
-    background-size: cover;
-    background-position: center;
-  }
-  main h1 {
-    font-size: 6vw;
-  }
-  main h2,
-  main h3 {
-    font-size: 4vw;
-  }
-  main .card-container {
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-  }
-  main .post {
-    width: 86%;
-    padding: 0.8rem;
-  }
-  main .post .icon {
-    width: 60%;
-  }
-  main .form-style .prefers {
-    margin: 0;
-    gap: 10px;
-  }
-  main .mapa {
-    width: 100%;
-  }
   footer {
     font-size: 0.7rem;
     padding: 10px;
   }
 }
 @media (min-width: 481px) and (max-width: 768px) {
-  body {
-    height: 100vh;
-    font-size: 15px;
-  }
-  header {
-    padding: 15px;
-    text-align: center;
-  }
-  header span {
-    font-size: 20px;
-  }
-  main {
-    margin: 10px;
-    padding: 15px;
-  }
-  main .index-background {
-    height: 300px;
-  }
-  main h1 {
-    font-size: 7vw;
-  }
-  main h2,
-  main h3 {
-    font-size: 5vw;
-  }
-  main .card-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  main .post {
-    width: 90%;
-    padding: 1rem;
-  }
-  main .mapa {
-    width: 100%;
-  }
-  main .form-style .prefers {
-    margin: 0;
-    gap: 10px;
-  }
   footer {
     font-size: 0.8rem;
     padding: 15px;
   }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
-  body {
-    font-size: 16px;
-  }
-  header {
-    padding: 20px;
-    text-align: center;
-  }
-  header span {
-    font-size: 22px;
-  }
-  main {
-    margin: 15px;
-    padding: 20px;
-  }
-  main .index-background {
-    height: 350px;
-  }
-  main h1 {
-    font-size: 8vw;
-  }
-  main h2,
-  main h3 {
-    font-size: 5vw;
-  }
-  main .card-container {
-    flex-direction: row;
-    gap: 15px;
-    justify-content: space-between;
-  }
-  main .form-style .prefers {
-    margin: 0;
-    gap: 10px;
-  }
-  main .post {
-    width: 48%;
-    padding: 1rem;
-  }
   footer {
     font-size: 0.9rem;
     padding: 20px;
-  }
-}
-@media (min-width: 1025px) {
-  body {
-    font-size: 17px;
-  }
-  header {
-    padding: 25px;
-    text-align: center;
-  }
-  header span {
-    font-size: 24px;
-  }
-  main {
-    margin: 20px;
-    padding: 25px;
-  }
-  main .index-background {
-    height: 400px;
-  }
-  main h1 {
-    font-size: 6vw;
-  }
-  main h2,
-  main h3 {
-    font-size: 4vw;
-  }
-  main .card-container {
-    flex-direction: row;
-    gap: 20px;
-    justify-content: space-evenly;
-  }
-  main .post {
-    width: 30%;
-    padding: 1.5rem;
-  }
-  footer {
-    font-size: 1rem;
-    padding: 25px;
   }
 }
 
