@@ -1,0 +1,27 @@
+@use 'variables' as *;
+
+.offcanvas {
+    background-color: $background-color;
+  
+    .offcanvas-header {
+      background-color: $primary-color;
+      color: $white;
+      .btn-close {
+        background-color: $white;
+      }
+    }
+  
+    .offcanvas-body {
+      .navbar-nav {
+        .nav-link {
+          color: $primary-color;
+          font-size: 2rem;
+  
+          &:hover {
+            background-color: rgba(24, 165, 170, 0.192);
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+  }

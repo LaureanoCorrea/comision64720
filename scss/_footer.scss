@@ -1,0 +1,39 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+footer {
+    background-image: radial-gradient($primary-color, $secondary-color);
+    text-align: center;
+    color: $white;
+    font-size: 1rem;
+    padding: 25px;
+    .footer-icon {
+      img {
+        transition: transform 0.3s ease;
+  
+        &:hover {
+          transform: rotate(360deg);
+        }
+      }
+    }
+  
+    .Smedia {
+      margin: 5px;
+      background-color: transparent;
+    }
+  
+    @include for-small-screens {
+      font-size: 0.7rem;
+      padding: 10px;
+    }
+  
+    @include for-medium-screens {
+      font-size: 0.8rem;
+      padding: 15px;
+    }
+  
+    @include for-large-screens {
+      font-size: 0.9rem;
+      padding: 20px;
+    }
+  }
+  

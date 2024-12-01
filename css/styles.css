@@ -14,7 +14,11 @@ body {
 @media (max-width: 480px) {
   body {
     height: 100vh;
-    font-size: 14px;
+    font-size: 1rem;
+    text-align: center;
+  }
+  body p {
+    margin: 33px;
   }
 }
 @media (min-width: 481px) and (max-width: 768px) {
@@ -30,31 +34,48 @@ body {
 }
 @media (min-width: 1025px) {
   body {
-    font-size: 17px;
+    font-size: 1rem;
+    text-align: center;
   }
 }
 
 header {
   padding: 20px;
-  text-align: center;
 }
-header .icon-head {
-  width: 30px;
-  height: auto;
+header nav.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+header nav.navbar .container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header nav.navbar .navbar-brand {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+header nav.navbar .navbar-brand .icon-head {
   transition: transform 0.3s ease;
 }
-header .icon-head:hover {
-  scale: 2.2;
-  transform: rotate(360deg);
+header nav.navbar .navbar-brand .icon-head:hover {
+  transform: rotate(360deg) scale(2);
 }
-header span {
-  font-size: 23px;
+header nav.navbar .navbar-title {
+  font-size: 2rem;
+  font-weight: bold;
+  white-space: nowrap;
 }
-header .navbar-toggler {
+header nav.navbar .navbar-toggler {
   border: none;
+  background: none;
 }
-header .navbar-toggler .navbar-toggler-icon {
-  width: 30px;
+header nav.navbar .navbar-toggler .navbar-toggler-icon {
+  width: 24px;
+  height: 24px;
 }
 @media (max-width: 480px) {
   header {
@@ -96,6 +117,10 @@ main {
   margin: 3%;
   padding: 20px;
 }
+main p {
+  margin: 16px 1px 21px 1px;
+  font-size: 1.5rem;
+}
 main .index-background,
 main .services-background,
 main .about-background,
@@ -104,7 +129,6 @@ main .contact-background {
   position: relative;
   background-size: cover;
   clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
-  height: 400px;
 }
 main .index-background .background-img,
 main .services-background .background-img,
@@ -137,41 +161,115 @@ main .contact-background .text-overlay {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
 }
-main .index-background .text-overlay h1,
-main .services-background .text-overlay h1,
-main .about-background .text-overlay h1,
-main .reservations-background .text-overlay h1,
-main .contact-background .text-overlay h1 {
-  font-size: 7vw;
+@media (max-width: 480px) {
+  main .index-background .text-overlay h1,
+  main .services-background .text-overlay h1,
+  main .about-background .text-overlay h1,
+  main .reservations-background .text-overlay h1,
+  main .contact-background .text-overlay h1 {
+    font-size: 2.5rem;
+  }
 }
-main .index-background .text-overlay h2,
-main .services-background .text-overlay h2,
-main .about-background .text-overlay h2,
-main .reservations-background .text-overlay h2,
-main .contact-background .text-overlay h2 {
-  font-size: 4.3vw;
+@media (min-width: 481px) and (max-width: 768px) {
+  main .index-background .text-overlay h1,
+  main .services-background .text-overlay h1,
+  main .about-background .text-overlay h1,
+  main .reservations-background .text-overlay h1,
+  main .contact-background .text-overlay h1 {
+    font-size: 3rem;
+  }
 }
-main .index-background .text-overlay h3,
-main .services-background .text-overlay h3,
-main .about-background .text-overlay h3,
-main .reservations-background .text-overlay h3,
-main .contact-background .text-overlay h3 {
-  font-size: 3vw;
+@media (min-width: 769px) and (max-width: 1024px) {
+  main .index-background .text-overlay h1,
+  main .services-background .text-overlay h1,
+  main .about-background .text-overlay h1,
+  main .reservations-background .text-overlay h1,
+  main .contact-background .text-overlay h1 {
+    font-size: 4rem;
+  }
 }
-main .index-background .text-overlay:before,
-main .services-background .text-overlay:before,
-main .about-background .text-overlay:before,
-main .reservations-background .text-overlay:before,
-main .contact-background .text-overlay:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+@media (min-width: 1025px) {
+  main .index-background .text-overlay h1,
+  main .services-background .text-overlay h1,
+  main .about-background .text-overlay h1,
+  main .reservations-background .text-overlay h1,
+  main .contact-background .text-overlay h1 {
+    font-size: 8rem;
+  }
+}
+@media (max-width: 480px) {
+  main .index-background .text-overlay h2,
+  main .services-background .text-overlay h2,
+  main .about-background .text-overlay h2,
+  main .reservations-background .text-overlay h2,
+  main .contact-background .text-overlay h2 {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  main .index-background .text-overlay h2,
+  main .services-background .text-overlay h2,
+  main .about-background .text-overlay h2,
+  main .reservations-background .text-overlay h2,
+  main .contact-background .text-overlay h2 {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  main .index-background .text-overlay h2,
+  main .services-background .text-overlay h2,
+  main .about-background .text-overlay h2,
+  main .reservations-background .text-overlay h2,
+  main .contact-background .text-overlay h2 {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1025px) {
+  main .index-background .text-overlay h2,
+  main .services-background .text-overlay h2,
+  main .about-background .text-overlay h2,
+  main .reservations-background .text-overlay h2,
+  main .contact-background .text-overlay h2 {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 480px) {
+  main .index-background .text-overlay h3,
+  main .services-background .text-overlay h3,
+  main .about-background .text-overlay h3,
+  main .reservations-background .text-overlay h3,
+  main .contact-background .text-overlay h3 {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  main .index-background .text-overlay h3,
+  main .services-background .text-overlay h3,
+  main .about-background .text-overlay h3,
+  main .reservations-background .text-overlay h3,
+  main .contact-background .text-overlay h3 {
+    font-size: 1.8rem;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  main .index-background .text-overlay h3,
+  main .services-background .text-overlay h3,
+  main .about-background .text-overlay h3,
+  main .reservations-background .text-overlay h3,
+  main .contact-background .text-overlay h3 {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1025px) {
+  main .index-background .text-overlay h3,
+  main .services-background .text-overlay h3,
+  main .about-background .text-overlay h3,
+  main .reservations-background .text-overlay h3,
+  main .contact-background .text-overlay h3 {
+    font-size: 2.5rem;
+  }
 }
 @media (max-width: 480px) {
   main .index-background,
@@ -200,14 +298,39 @@ main .contact-background .text-overlay:before {
     height: 350px;
   }
 }
+@media (min-width: 1025px) {
+  main .index-background,
+  main .services-background,
+  main .about-background,
+  main .reservations-background,
+  main .contact-background {
+    height: 450px;
+  }
+}
 main .card-container {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  margin-bottom: 25px;
+}
+@media (max-width: 480px) {
+  main .card-container {
+    margin: 12px 15px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  main .card-container {
+    flex-wrap: nowrap;
+  }
+}
+@media (min-width: 1025px) {
+  main .card-container {
+    flex-wrap: nowrap;
+  }
 }
 main .card-container .post {
-  width: calc(100% - 20px);
+  width: calc(100% - 30px);
   background-color: #ffffff;
   padding: 1rem;
   border-radius: 8px;
@@ -226,7 +349,8 @@ main .card-container .post {
 }
 @media (min-width: 1025px) {
   main .card-container .post {
-    width: 30%;
+    width: 24%;
+    margin: 18px 1px 24px 1px;
   }
 }
 main .card-container .post .icon {
@@ -238,7 +362,44 @@ main .card-container .post .icon {
   background-position: center;
   transition: background-image 0.3s;
 }
+main .card-container .post .bat {
+  background-image: url("../icons/baterie.png");
+}
+main .card-container .post .bat:hover {
+  transform: scale(1.1);
+  background-image: url("../icons/energy_battery.png");
+}
+main .card-container .post .gas {
+  background-image: url("../icons/gas.png");
+}
+main .card-container .post .gas:hover {
+  transform: scale(1.1);
+  background-image: url("../icons/gasoline.png");
+}
+main .card-container .post .tow {
+  background-image: url("../icons/tow.png");
+}
+main .card-container .post .tow:hover {
+  transform: scale(1.1);
+  background-image: url("../icons/TowTruck.png");
+}
+main .card-container .post .tire {
+  background-image: url("../icons/tire.png");
+}
+main .card-container .post .tire:hover {
+  transform: scale(1.1);
+  background-image: url("../icons/Wheel.png");
+}
+main .card-container .card {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 170px;
+}
 main .card-group {
+  display: flex;
   justify-content: space-around;
 }
 main .card-group h3 {
@@ -257,6 +418,43 @@ main .ubication p {
 main .ubication .mapa {
   width: 98%;
 }
+main .form-style {
+  border: #343a40 1px solid;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+main .form-style .form-group {
+  text-align: left;
+}
+main .form-style .form-group .row {
+  margin: 2px 2px 2px 2px;
+  padding: 12px;
+  background-color: rgba(235, 181, 80, 0.247);
+}
+main .form-style .btn {
+  margin: 7px;
+  background-color: rgb(5, 146, 99);
+}
+
+.offcanvas {
+  background-color: #f8f9fa;
+}
+.offcanvas .offcanvas-header {
+  background-color: #343a40;
+  color: #ffffff;
+}
+.offcanvas .offcanvas-header .btn-close {
+  background-color: #ffffff;
+}
+.offcanvas .offcanvas-body .navbar-nav .nav-link {
+  color: #343a40;
+  font-size: 2rem;
+}
+.offcanvas .offcanvas-body .navbar-nav .nav-link:hover {
+  background-color: rgba(24, 165, 170, 0.192);
+  border-radius: 10px;
+}
 
 footer {
   background-image: radial-gradient(#343a40, #17a2b8);
@@ -264,6 +462,16 @@ footer {
   color: #ffffff;
   font-size: 1rem;
   padding: 25px;
+}
+footer .footer-icon img {
+  transition: transform 0.3s ease;
+}
+footer .footer-icon img:hover {
+  transform: rotate(360deg);
+}
+footer .Smedia {
+  margin: 5px;
+  background-color: transparent;
 }
 @media (max-width: 480px) {
   footer {

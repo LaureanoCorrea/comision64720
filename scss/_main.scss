@@ -1,0 +1,165 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+main {
+    margin: 3%;
+    padding: 20px;
+  
+    p {
+      margin: 16px 1px 21px 1px;
+      font-size: 1.5rem;
+    }
+    .index-background,
+    .services-background,
+    .about-background,
+    .reservations-background,
+    .contact-background {
+      @include section-background;
+  
+      @include for-small-screens {
+        height: 40vh;
+      }
+  
+      @include for-medium-screens {
+        height: 300px;
+      }
+  
+      @include for-large-screens {
+        height: 350px;
+      }
+      @include for-extra-large-screens {
+        height: 450px;
+      }
+    }
+  
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 25px;
+      @include for-small-screens {
+        margin: 12px 15px;
+      }
+  
+      @include for-medium-screens {
+      }
+  
+      @include for-large-screens {
+        flex-wrap: nowrap;
+      }
+  
+      @include for-extra-large-screens {
+        flex-wrap: nowrap;
+      }
+  
+      .post {
+        width: calc(100% - 30px);
+        @include card;
+  
+        @include for-medium-screens {
+          width: 90%;
+        }
+  
+        @include for-large-screens {
+          width: 48%;
+        }
+  
+        @include for-extra-large-screens {
+          width: 24%;
+          margin: 18px 1px 24px 1px;
+        }
+  
+        .icon {
+          width: 100%;
+          height: 150px;
+          border-radius: 5px;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          transition: background-image 0.3s;
+        }
+        .bat {
+          background-image: url("../icons/baterie.png");
+  
+          &:hover {
+            transform: scale(1.1);
+            background-image: url("../icons/energy_battery.png");
+          }
+        }
+  
+        .gas {
+          background-image: url("../icons/gas.png");
+  
+          &:hover {
+            transform: scale(1.1);
+            background-image: url("../icons/gasoline.png");
+          }
+        }
+  
+        .tow {
+          background-image: url("../icons/tow.png");
+  
+          &:hover {
+            transform: scale(1.1);
+            background-image: url("../icons/TowTruck.png");
+          }
+        }
+  
+        .tire {
+          background-image: url("../icons/tire.png");
+  
+          &:hover {
+            transform: scale(1.1);
+            background-image: url("../icons/Wheel.png");
+          }
+        }
+      }
+      .card {
+        @include card;
+        width: 170px;
+      }
+    }
+    .card-group {
+      display: flex;
+      justify-content: space-around;
+      h3 {
+        text-align: center;
+        font-size: 4rem;
+        margin-top: 5%;
+      }
+    }
+    .ubication {
+      h3 {
+        text-align: center;
+        font-size: 3rem;
+      }
+      p {
+        text-align: center;
+        color: $secondary-color;
+      }
+  
+      .mapa {
+        width: 98%;
+      }
+    }
+    .form-style {
+      border: $primary-color 1px solid;
+      border-radius: $border-radius;
+      padding: 12px;
+      margin-bottom: 10px;
+      .form-group {
+        text-align: left;
+        .row {
+          margin: 2px 2px 2px 2px;
+          padding: 12px;
+          background-color: rgba(235, 181, 80, 0.247);
+        }
+      }
+  
+      .btn {
+        margin: 7px;
+        background-color: rgb(5, 146, 99);
+      }
+    }
+  }

@@ -1,0 +1,33 @@
+@use 'variables' as *;
+@use 'mixins'as *;
+body {
+    width: 100%;
+    font-family: $font-family;
+    line-height: 1.6;
+    background-color: $background-color;
+    color: $text-color;
+  
+    @include for-small-screens {
+      height: 100vh;
+      font-size: 1rem;
+      text-align: center;
+      p {
+        margin: 33px;
+      }
+    }
+  
+    @include for-medium-screens {
+      height: 100vh;
+      font-size: 15px;
+    }
+  
+    @include for-large-screens {
+      font-size: 16px;
+    }
+  
+    @include for-extra-large-screens {
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+  

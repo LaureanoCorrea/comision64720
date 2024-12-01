@@ -1,0 +1,84 @@
+@use "mixins" as *;
+
+header {
+  padding: 20px;
+  nav.navbar {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 0.5rem 1rem;
+
+    .container-fluid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      margin-right: 1rem; 
+
+      .icon-head {
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: rotate(360deg) scale(2);
+        }
+      }
+    }
+
+    .navbar-title {
+      font-size: 2rem;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+   
+    .navbar-toggler {
+      border: none;
+      background: none;
+
+      .navbar-toggler-icon {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  @include for-small-screens {
+    padding: 10px;
+
+    span {
+      font-size: 18px;
+    }
+
+    .navbar-toggler-icon {
+      width: 25px;
+    }
+  }
+
+  @include for-medium-screens {
+    padding: 15px;
+
+    span {
+      font-size: 20px;
+    }
+  }
+
+  @include for-large-screens {
+    padding: 20px;
+    span {
+      font-size: 22px;
+    }
+  }
+
+  @include for-extra-large-screens {
+    padding: 25px;
+
+    span {
+      font-size: 24px;
+    }
+  }
+}

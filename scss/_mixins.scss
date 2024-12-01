@@ -1,0 +1,134 @@
+@use 'variables' as *;
+
+
+@mixin background-images {
+    position: relative;
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+  }
+  
+  @mixin overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  @mixin img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  @mixin text-overlay {
+    position: absolute;
+    color: white;
+    text-shadow: 2px 5px 4px rgba(0, 0, 0, 0.692);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  @mixin section-background {
+    @include background-images;
+  
+    .background-img {
+      @include img;
+    }
+  
+    .text-overlay {
+      @include text-overlay;
+  
+      h1 {
+        @include for-small-screens {
+          font-size: 2.5rem;
+        }
+        @include for-medium-screens {
+          font-size: 3rem;
+        }
+        @include for-large-screens {
+          font-size: 4rem;
+        }
+        @include for-extra-large-screens {
+          font-size: 8rem;
+        }
+      }
+  
+      h2 {
+        @include for-small-screens {
+          font-size: 1.5rem;
+        }
+        @include for-medium-screens {
+          font-size: 2.5rem;
+        }
+        @include for-large-screens {
+          font-size: 3rem;
+        }
+        @include for-extra-large-screens {
+          font-size: 3.5rem;
+        }
+      }
+  
+      h3 {
+        @include for-small-screens {
+          font-size: 1.2rem;
+        }
+        @include for-medium-screens {
+          font-size: 1.8rem;
+        }
+        @include for-large-screens {
+          font-size: 2rem;
+        }
+        @include for-extra-large-screens {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+  
+  // Responsive Mixins
+  @mixin for-small-screens {
+    @media (max-width: 480px) {
+      @content;
+    }
+  }
+  
+  @mixin for-medium-screens {
+    @media (min-width: 481px) and (max-width: 768px) {
+      @content;
+    }
+  }
+  
+  @mixin for-large-screens {
+    @media (min-width: 769px) and (max-width: 1024px) {
+      @content;
+    }
+  }
+  
+  @mixin for-extra-large-screens {
+    @media (min-width: 1025px) {
+      @content;
+    }
+  }
+  
+  @mixin card{
+    background-color: $light-background;
+    padding: 1rem;
+    border-radius: $border-radius;
+    box-shadow: $card-shadow;
+    text-align: center;
+  }
